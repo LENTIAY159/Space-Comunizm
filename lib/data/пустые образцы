@@ -1,0 +1,191 @@
+ЮНИТ
+
+
+Unit(
+  id: '',
+  name: '',
+  move: '',
+  toughness: '',
+  save: '',
+  wounds: '',
+  leadership: '',
+  objectiveControl: '',
+  invulnerableSave: '',
+  baseSize: ,
+  rangedWeapons: [],
+  meleeWeapons: [],
+  coreAbilities: [],
+  factionAbilities: [],
+  abilities: [],
+  specialName:
+  specialText:
+  leader: [],
+  leaderDescription: '',
+  unitComposition: [],
+  unitCompositionDescription: '',
+  keywords: [],
+  factionKeywords: [],
+  wargearAbilities: '',
+  wargearOptions: '',
+  damaged: {},
+),
+
+
+
+
+
+
+
+
+
+
+ДЕТАЧМЕНТ
+
+
+
+
+import '../../z_datachment_model/detachment_model.dart';
+import '../../z_datachment_model/detachment_rule.dart';
+import '../../z_datachment_model/enhancement_model.dart';
+import '../../z_datachment_model/restriction_model.dart';
+import '../../z_datachment_model/stratagem_model.dart';
+
+final Detachment strikeForceGladius = Detachment(
+  name: "",
+
+  additionalRules: [
+    AdditionalRule(
+      name: "",
+      description: "",
+    ),
+  ],
+
+  enhancements: [
+    Enhancement(
+      name: "",
+      description: "",
+    ),
+  ],
+
+  stratagems: [
+    Stratagem(
+      name: "",
+      cpCost: 0,
+      when: "",
+      target: "",
+      effect: "",
+      restrictions: null,
+      categories: [],
+    ),
+  ],
+
+  restrictions: [
+    Restriction(
+      type: RestrictionType.keywordLimit,
+      keywords: [],
+      maxCount: null,
+      description: "",
+    ),
+    Restriction(
+      type: RestrictionType.keywordBan,
+      keywords: [],
+      description: "",
+  ],
+);
+
+
+
+
+
+
+
+
+
+
+ПРИМЕРЫ ДЛЯ ОРУЖИЙ
+  // Пример 1: Оружие с простыми правилами (без параметров)
+  final bolter = Weapon(
+    name: 'Bolter',
+    profiles: [
+      WeaponProfile(
+        range: '24"',
+        attacks: '2',
+        hit: '3+',
+        strength: '4',
+        ap: '0',
+        damage: '1',
+        specialRules: [
+          WeaponAbility.rapidFire, // Используем enum напрямую
+          WeaponAbility.lethalHits,
+        ],
+        specialRuleDetails: {
+          WeaponAbility.rapidFire: {'value': '1'}, // Для Rapid Fire 1
+        },
+      ),
+    ],
+  );
+
+  // Пример 2: Оружие с несколькими экземплярами одного правила
+  final multiMeltagun = Weapon(
+    name: 'Multi-Meltagun',
+    profiles: [
+      WeaponProfile(
+        range: '18"',
+        attacks: '2',
+        hit: '3+',
+        strength: '9',
+        ap: '-4',
+        damage: 'D6',
+        specialRules: [
+          // Два разных Anti правила с уникальными ID
+          WeaponAbilityKeys.createWithId(WeaponAbility.anti, 'vehicle'),
+          WeaponAbilityKeys.createWithId(WeaponAbility.anti, 'monster'),
+          WeaponAbility.melta, // Обычное правило
+        ],
+        specialRuleDetails: {
+          // Ключи должны точно соответствовать тем, что в specialRules
+          WeaponAbilityKeys.createWithId(WeaponAbility.anti, 'vehicle'): {
+            'type': 'VEHICLE',
+            'value': '3+',
+          },
+          WeaponAbilityKeys.createWithId(WeaponAbility.anti, 'monster'): {
+            'type': 'MONSTER',
+            'value': '4+',
+          },
+          WeaponAbility.melta: {'value': '2'},
+        },
+      ),
+    ],
+  );
+
+  // Пример 3: Использование фабрики для создания ключей
+  final plasmaCannon = Weapon(
+    name: 'Plasma Cannon',
+    profiles: [
+      WeaponProfile(
+        name: 'Standard',
+        range: '36"',
+        attacks: 'D3',
+        hit: '3+',
+        strength: '7',
+        ap: '-2',
+        damage: '1',
+        specialRules: [
+          WeaponAbility.blast,
+        ],
+      ),
+      WeaponProfile(
+        name: 'Supercharge',
+        range: '36"',
+        attacks: 'D3',
+        hit: '3+',
+        strength: '8',
+        ap: '-3',
+        damage: '2',
+        specialRules: [
+          WeaponAbility.blast,
+          WeaponAbility.hazardous,
+        ],
+      ),
+    ],
+  );
