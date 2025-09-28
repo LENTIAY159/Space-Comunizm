@@ -86,7 +86,7 @@ List<Unit> getOtherDatasheetsTyranids() {
       leader: [],
       leaderDescription: '',
       unitComposition: [
-        UnitCompositionOption(id: '1', modelCount: 1, points: 80),
+        UnitCompositionOption(id: '1', modelCount: 1, points: 70),
       ],
       unitCompositionDescription: 'Эта модель экипирована: piercing claws and talons.',
       keywords: [

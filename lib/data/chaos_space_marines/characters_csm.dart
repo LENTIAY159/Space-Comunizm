@@ -50,7 +50,7 @@ Lord of the Traitor Legions (Aura): Пока дружественный HERETIC 
       ],
       leaderDescription: 'Эта модель может быть присоединена к следующим отрядам: Chaos Terminator Squad, Chosen.',
       unitComposition: [
-        UnitCompositionOption(id: '1', modelCount: 1, points: 280),
+        UnitCompositionOption(id: '1', modelCount: 1, points: 270),
       ],
       unitCompositionDescription: '1 Abaddon the Despoiler – EPIC HERO\nЭта модель экипирована: Talon of Horus; Drachʼnyen.',
       keywords: [

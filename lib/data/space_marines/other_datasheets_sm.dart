@@ -36,7 +36,7 @@ List<Unit> getOtherDatasheetsSM() {
 ''',
       unitComposition: [
         UnitCompositionOption(id: '1', modelCount: 3, points: 100),
-        UnitCompositionOption(id: '2', modelCount: 6, points: 220),
+        UnitCompositionOption(id: '2', modelCount: 6, points: 200),
       ],
       unitCompositionDescription: '1 Aggressor Sergeant, 2–5 Aggressors. Каждая модель экипирована: flamestorm gauntlets; twin power fist.',
       leader: [],
@@ -82,7 +82,7 @@ List<Unit> getOtherDatasheetsSM() {
         'Ballistus Strike: Каждый раз, когда эта модель совершает дальнобойную атаку, нацеленную на отряд, который не Below Half-strength, вы можете перебросить бросок на попадание.',
       ],
       unitComposition: [
-        UnitCompositionOption(id: '1', modelCount: 1, points: 140),
+        UnitCompositionOption(id: '1', modelCount: 1, points: 150),
       ],
       unitCompositionDescription: 'Эта модель экипирована: Ballistus missile launcher; Ballistus lascannon; twin storm bolter; armoured feet.',
       leader: [],
@@ -276,7 +276,7 @@ Heavy onslaught gatling cannon этой модели может быть зам�
 Twin fragstorm grenade launcher этой модели может быть заменен на 1 twin storm bolter.
 ''',
       unitComposition: [
-        UnitCompositionOption(id: '1', modelCount: 1, points: 210),
+        UnitCompositionOption(id: '1', modelCount: 1, points: 195),
       ],
       unitCompositionDescription: 'Эта модель экипирована: Twin fragstorm grenade launcher; heavy flamer; heavy onslaught gatling cannon; Redemptor fist.',
       leader: [],
